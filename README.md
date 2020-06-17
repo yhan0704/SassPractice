@@ -7,3 +7,5 @@
 * npm install --save-dev node-sass
 
 * parcel index.html
+
+* path = C:\Program Files\nodejs
