@@ -5,6 +5,21 @@
 }
 
 .container .item:first-child {
+  background: blanchedalmond;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: orange;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding-bottom: 40px;
+}
+
+.variableBox {
+  width: 100px;
+  height: 100px;
   background: red;
 }
 /*# sourceMappingURL=sass01.css.map */

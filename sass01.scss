@@ -1,3 +1,5 @@
+$w: 100px;
+$h: 100px;
 .container{
     $size:100px;
     .item{
@@ -5,8 +7,25 @@
         height: $size;
         background:lightcoral;
         &:first-child{
-            background: red;
+            background:blanchedalmond;
         }
     }
-    
+    @at-root .box{
+        width: $size;
+        height: $size;
+        background:orange;
+        margin: {
+            top: 10px;
+            left: 20px;
+        }
+        padding: {
+            bottom:40px;
+        }
+    }
+}
+
+.variableBox{
+    width: $w;
+    height: $h;
+    background: red;
 }
