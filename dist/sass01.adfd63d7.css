@@ -1,0 +1,12 @@
+.container .item {
+  width: 100px;
+  height: 100px;
+  background: lightcoral;
+}
+
+.container .item:first-child {
+  background: red;
+}
+
+
+/*# sourceMappingURL=/sass01.adfd63d7.css.map */

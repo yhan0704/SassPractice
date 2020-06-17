@@ -3,6 +3,10 @@
     .item{
         width:$size;
         height: $size;
-        background:tomato;
+        background:lightcoral;
+        &:first-child{
+            background: red;
+        }
     }
+    
 }
