@@ -1,0 +1,1 @@
+{"version":3,"sources":["sass01.scss"],"names":[],"mappings":"AAAA,AAEI,UAFM,CAEN,KAAK,CAAA;EACD,KAAK,EAFH,KAAK;EAGP,MAAM,EAHJ,KAAK;EAIP,UAAU,EAAC,MAAM,GACpB","file":"sass01.ce185676.css","sourceRoot":"..","sourcesContent":[".container{\n    $size:100px;\n    .item{\n        width:$size;\n        height: $size;\n        background:tomato;\n    }\n}"]}
