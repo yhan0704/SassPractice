@@ -3,9 +3,10 @@ $h: 100px;
 .container{
     $size:100px;
     .item{
+        $color: lightgreen !global;
         width:$size;
         height: $size;
-        background:lightcoral;
+        background: $color;
         &:first-child{
             background:blanchedalmond;
         }
@@ -13,7 +14,7 @@ $h: 100px;
     @at-root .box{
         width: $size;
         height: $size;
-        background:orange;
+        background: $color;
         margin: {
             top: 10px;
             left: 20px;
@@ -29,3 +30,26 @@ $h: 100px;
     height: $h;
     background: red;
 }
+
+// maxin and include
+@mixin size($w: 100px, $h: 100px){
+    width: $w;
+    height: $h;
+}
+  
+.box1{
+    @include size(100px, 100px);
+}
+
+.box2{
+    @include size(100px, $h:50px);
+}
+
+.box3{
+  @include size();
+}
+
+
+
+
+

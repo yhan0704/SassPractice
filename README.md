@@ -22,3 +22,13 @@
 * Font-, Margin- 
 
 * Variables
+
+* !global flag
+
+* #{} - interpolation  // unquote()-remove quote
+
+* opacify(), transparentize()
+
+* Mixin and include
+
+

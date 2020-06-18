@@ -1,7 +1,7 @@
 .container .item {
   width: 100px;
   height: 100px;
-  background: lightcoral;
+  background: lightgreen;
 }
 
 .container .item:first-child {
@@ -11,7 +11,7 @@
 .box {
   width: 100px;
   height: 100px;
-  background: orange;
+  background: lightgreen;
   margin-top: 10px;
   margin-left: 20px;
   padding-bottom: 40px;
