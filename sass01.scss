@@ -49,7 +49,67 @@ $h: 100px;
   @include size();
 }
 
+@mixin boxBorder($w: 10px, $h: 100px, $color:blue){
+    border: $w solid $color;
+}
 
+// variable aguments
 
+//need to use ***properties' name!!!!
+@mixin boxBorder(
+$width: 10px, 
+$height: 100px, 
+$border: 10px solid red
+){
+  boxBorder: {
+    width:$width;
+    height:$height;
+    border:$border;
+  }
+}
 
+.box1{
+  $boxBorder-values: (width:10px, height:10px);
+  @include boxBorder($boxBorder-values...);
+}
 
+//third parameter variable argument
+@mixin bg($width, $height, $bg-values...) {
+    width: $width;
+    height: $height;
+    background: $bg-values;
+  }
+  
+  div {
+    @include bg(
+      100px,
+      200px,
+      url("/images/a.png") no-repeat 10px 20px,
+      url("/images/b.png") no-repeat,
+      url("/images/c.png")
+    );
+  }
+  
+
+  //content - A mixin can pass arguments to its 
+  //content block the same way it would pass arguments to another mixin by writing
+  //if two class name is different 
+  //and want to add only one class some properties.
+
+  @mixin icon($url){
+    &::after{
+      content:$url;
+      @content;
+    }
+  }
+  
+  .icon1 {
+    // icon Mixin의 기존 기능만 사용
+    @include icon("/images/icon.png");
+  }
+  .icon2 {
+    // icon Mixin에 스타일 블록을 추가하여 사용
+    @include icon("/images/icon.png") {
+      position: absolute;
+    };
+  }
