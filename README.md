@@ -1,4 +1,6 @@
-# Sass Practice
+# SASS(SCSS) Practice
+
+* Use scss on sassmeister(https://www.sassmeister.com/)
 
 ## Using Parcel
 
