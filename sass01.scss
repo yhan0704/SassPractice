@@ -31,7 +31,7 @@ $h: 100px;
     background: red;
 }
 
-// maxin and include
+// maxin use with @include
 @mixin size($w: 100px, $h: 100px){
     width: $w;
     height: $h;
@@ -104,12 +104,82 @@ $border: 10px solid red
   }
   
   .icon1 {
-    // icon Mixin의 기존 기능만 사용
     @include icon("/images/icon.png");
   }
   .icon2 {
-    // icon Mixin에 스타일 블록을 추가하여 사용
     @include icon("/images/icon.png") {
       position: absolute;
     };
   }
+
+
+// function
+//if already has function name, we can use extract-
+//example) function red -> function extract-red
+
+@function columns($number, $columns, $width){
+  @return $width * ($number / $columns)
+}
+
+.container{
+  $width:1200px;
+  .item:nth-child(1){
+    width:columns(1, 12, $width);
+  }
+}
+
+//Control directives / Expressions
+//if conditional (ternary) operator (condition ? true : false)
+//if(condition, ture, false){}
+//unitless is useful
+
+//example 1
+$width:555px;
+div{
+  width:if($width > 300px, $width, null);
+}
+
+@function limitSize($size){
+  @if($size >= 0 and $size <= 200px) {
+    @return 200px;
+  }@else{
+    @return 800px;
+  }
+}
+
+div{
+  width:limitSize(180px);
+  height:limitSize(340px);
+}
+
+//example 2
+
+@mixin pCenter($w, $h, $p: absolute) {
+  @if
+    $p == absolute
+    or $p == fixed
+    or not $p == relative
+    or not $p == static
+  {
+    width: if(unitless($w), #{$w}px, $w);
+    height: if(unitless($h), #{$h}px, $h);
+    position: $p;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+
+.box1 {
+  @include pCenter(10px, 20px);
+}
+.box2 {
+  @include pCenter(50, 50, fixed);
+}
+.box3 {
+  @include pCenter(100, 200, relative);
+}
+
+

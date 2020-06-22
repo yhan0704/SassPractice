@@ -15,6 +15,8 @@
 
 #  Learning About...
 
+* Boolean for sass 'and' 'or' 'not'
+
 * & for  representing the current selector  
 
 * @at-root
@@ -35,4 +37,6 @@
 
 * Variable Arguments
 
+* function
 
+* if statement
