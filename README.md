@@ -42,3 +42,9 @@
 * function
 
 * if statement
+
+* for
+
+* each
+
+* while

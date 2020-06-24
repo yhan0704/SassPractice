@@ -183,3 +183,37 @@ div{
 }
 
 
+// for from through
+//for from to => literate before last child
+@for $i from 1 through 3 {
+  .though:nth-child(#{$i}){
+    width:20px * $i;
+  }
+}
+
+//each is similar with for in(list)
+
+//example 1
+$fruits: (apple, orange, banana, mango);
+
+.fruits{
+  @each $fruit in $fruits{
+    $index: index($fruits, $fruit);
+    li.#{$fruit}{
+      background:url("/image/#{$fruit}.png");
+    }
+  }
+}
+
+//example 2 => make index using builtin function "index()"
+$fruits: (apple, orange, banana, mango);
+
+.fruits{
+  @each $fruit in $fruits{
+    $index: index($fruits, $fruit);
+    li:nth-child(#{$index}){
+      background:url("/image/#{$fruit}.png");
+    }
+  }
+}
+
